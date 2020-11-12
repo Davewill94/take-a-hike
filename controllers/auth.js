@@ -11,6 +11,7 @@ const createUser = (req, res) => {
         }
         bcrypt.hash(req.body.password, salt, (err, hashedPwd) => {
             if(err) {
+                console.log(" HASHED PW")
                 return res.send(err);
             }
 
@@ -33,6 +34,7 @@ const createUser = (req, res) => {
                 })
             })
             .catch(err => {
+                console.log("ERROR CREATE USER!!!!!!!!!")
                 res.status(400).send(`ERROR: ${err}`);
             })
         })
