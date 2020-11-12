@@ -11,14 +11,13 @@ const createUser = (req, res) => {
         }
         bcrypt.hash(req.body.password, salt, (err, hashedPwd) => {
             if(err) {
-                console.log(" HASHED PW")
                 return res.send(err);
             }
 
             req.body.password = hashedPwd;
+            console.log(req.body);
             User.create(req.body)
             .then(newUser => {
-                console.log("Sucess")
                 const token = jwt.sign (
                     {
                         id: newUser.id,
