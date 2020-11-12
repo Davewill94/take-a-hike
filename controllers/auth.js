@@ -15,7 +15,7 @@ const createUser = (req, res) => {
             }
 
             req.body.password = hashedPwd;
-            console.log(req.body);
+            console.log("THIS WAS THE REQ>BODY");
             User.create(req.body)
             .then(newUser => {
                 const token = jwt.sign (
