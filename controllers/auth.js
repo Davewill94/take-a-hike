@@ -18,6 +18,7 @@ const createUser = (req, res) => {
             req.body.password = hashedPwd;
             User.create(req.body)
             .then(newUser => {
+                console.log("Sucess")
                 const token = jwt.sign (
                     {
                         id: newUser.id,
@@ -34,7 +35,7 @@ const createUser = (req, res) => {
                 })
             })
             .catch(err => {
-                console.log("ERROR CREATE USER!!!!!!!!!")
+                console.log("ERROR CREATE USER!!!!!!!!!", err)
                 res.status(400).send(`ERROR: ${err}`);
             })
         })
