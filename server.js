@@ -8,7 +8,7 @@ const app = express();
 const routes = require('./routes');
 
 const corsOptions = {
-    origin: ['https://fearless-owl.surge.sh'],
+    origin: ['https://cors-anywhere.herokuapp.com/https://fearless-owl.surge.sh'],
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
     optionsSuccessStatus: 200 
