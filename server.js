@@ -8,7 +8,7 @@ const app = express();
 const routes = require('./routes');
 
 const corsOptions = {
-    origin: ['https://handy-can.surge.sh/'],
+    origin: ['https://fearless-owl.surge.sh'],
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
     optionsSuccessStatus: 200 
