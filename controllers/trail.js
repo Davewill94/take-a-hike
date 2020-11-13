@@ -22,6 +22,22 @@ const GetTrail = (req, res) => {
         where: {trail_id: req.params.index}
     })
     .then(trail => {
+        Review.findAll({
+            where: {trailId: trail.id},
+            include: [{
+                model: User,
+                attributes:['name']
+            }],
+            order: [['createdAt', "DESC"]]
+        })
+        .then(reviews => {
+            console.log("Finished Request")
+                    let reviewArray = [...reviews];
+                    let response = {...trail, reviewArray};
+                    res.status(200).send(response)
+        })
+
+
         res.status(200).send(trail)
     })
     .catch((err) => {
