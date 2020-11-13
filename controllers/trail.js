@@ -51,40 +51,40 @@ const GetTrail = (req, res) => {
 }
 
 const bulkTrailPost = (req, res) => {
-    console.log(req.body)
-    Trail.findAll()
-    .then(trails => {
-        console.log("made it to filter")
-        let newbulk = req.body.filter(function(trail) {
-            return !trails.includes(trail)
-        })
-        console.log(newbulk);
-        //     newbulk.forEach((trail) => {
-        //     Trail.create(trail)
-        //     .then(()=> {
-        //         res.status(200).send("Trail Created");
-        //     })
-        //     .catch(err => {
-        //         res.status(400).send(`ERROR: ${err}`);
-        //     })
-        // })
-
-    })
-    .catch((err) => {
-        res.status(400).send(`ERROR: ${err}`)
-    })
-
-
-
-    // req.body.forEach((trail) => {
-    //     Trail.create(trail)
-    //     .then(()=> {
-    //         res.status(200).send("Trail Created");
+    // console.log(req.body)
+    // Trail.findAll()
+    // .then(trails => {
+    //     console.log("made it to filter")
+    //     let newbulk = req.body.filter(function(trail) {
+    //         return !trails.includes(trail)
     //     })
-    //     .catch(err => {
-    //         res.status(400).send(`ERROR: ${err}`);
-    //     })
+    //     console.log(newbulk);
+    //     //     newbulk.forEach((trail) => {
+    //     //     Trail.create(trail)
+    //     //     .then(()=> {
+    //     //         res.status(200).send("Trail Created");
+    //     //     })
+    //     //     .catch(err => {
+    //     //         res.status(400).send(`ERROR: ${err}`);
+    //     //     })
+    //     // })
+
     // })
+    // .catch((err) => {
+    //     res.status(400).send(`ERROR: ${err}`)
+    // })
+
+
+
+    req.body.forEach((trail) => {
+        Trail.create(trail)
+        .then(()=> {
+            res.status(200).send("Trail Created");
+        })
+        .catch(err => {
+            res.status(400).send(`ERROR: ${err}`);
+        })
+    })
 }
 
 module.exports = {
