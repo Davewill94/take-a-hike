@@ -14,18 +14,18 @@ module.exports = {
       review: {
         type: Sequelize.STRING
       },
-      trailId: {
+      trail_id: {
         type: Sequelize.INTEGER
       },
       userId: {
         type: Sequelize.INTEGER
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE

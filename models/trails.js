@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      trails.belongsTo(models.user, {foreignKey: 'userId', as: 'AddedTrails'});
+      trails.belongsTo(models.user, {foreignKey: 'user_id', as: 'AddedTrails'});
       trails.belongsToMany(models.user, {
         as: 'savedtrails',
         through: 'savedtrail',
-        foreignKey: 'trailId',
-        otherKey: 'userId'
+        foreignKey: 'trail_id',
+        otherKey: 'user_id'
       });
-      trails.hasMany(models.review, {foreignKey: 'trailId'});
+      trails.hasMany(models.review, {foreignKey: 'trail_id'});
       // define association here
     }
   };

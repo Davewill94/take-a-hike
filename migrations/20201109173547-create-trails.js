@@ -44,15 +44,15 @@ module.exports = {
       lng: {
         type: Sequelize.FLOAT
       },
-      userId: {
+      user_id: {
         type: Sequelize.INTEGER
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE

@@ -15,7 +15,7 @@ module.exports = {
       location: "Davenport, Iowa",
       lat: 41.5246,
       lng: -90.6199,
-      userId: 1
+      user_id: 1
     },
     {
       title: 'Kleine Wanderweg',
@@ -29,7 +29,7 @@ module.exports = {
       location: "Davenport, Iowa",
       lat: 41.5253,
       lng: -90.6253,
-      userId: 2
+      user_id: 2
     }
   ], {});
 

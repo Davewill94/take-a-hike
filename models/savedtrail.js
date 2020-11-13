@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   savedtrail.init({
-    userId: DataTypes.INTEGER,
-    trailId: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    trail_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'savedtrail',
