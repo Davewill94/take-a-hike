@@ -17,7 +17,7 @@ module.exports = {
       trail_id: {
         type: Sequelize.INTEGER
       },
-      userId: {
+      user_id: {
         type: Sequelize.INTEGER
       },
       created_at: {
