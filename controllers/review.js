@@ -28,6 +28,7 @@ const deleteReview =(req, res) => {
 }
 
 const postReview = (req,res) => {
+    console.log(req.body)
     Review.create(req.body)
     .then(() => {
         res.status(200).send('Review Created')
