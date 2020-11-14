@@ -10,7 +10,7 @@ const routes = require('./routes');
 
 const corsOptions = {
     // origin: ['http://localhost:3000'],
-    origin: ['https://fearless-owl.surge.sh/'],
+    origin: ['https://take-a-hike.surge.sh/'],
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
     optionsSuccessStatus: 200 
