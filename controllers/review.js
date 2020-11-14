@@ -28,7 +28,6 @@ const deleteReview =(req, res) => {
 }
 
 const postReview = (req,res) => {
-    console.log(req.body)
     Review.create(req.body)
     .then(() => {
         res.status(200).send('Review Created')
@@ -38,8 +37,22 @@ const postReview = (req,res) => {
     })
 }
 
+const editPost = (req, res) => {
+    Review.update(req.body, {
+        where: {id: req.params.id},
+        returning: tru
+    })
+    .then(() => {
+        res.status(200).send('Review edited ')
+    })
+    .catch(err => {
+        res.status(500).send(`ERROR in editing review: ${err}`)
+    })
+}
+
 module.exports = {
     getAllReviews,
     deleteReview,
-    postReview
+    postReview,
+    editPost
 }
