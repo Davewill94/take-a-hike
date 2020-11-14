@@ -38,9 +38,10 @@ const postReview = (req,res) => {
 }
 
 const editPost = (req, res) => {
+    console.log(req.body)
     Review.update(req.body, {
         where: {id: req.params.id},
-        returning: tru
+        returning: true
     })
     .then(() => {
         res.status(200).send('Review edited ')
