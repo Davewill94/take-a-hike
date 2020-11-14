@@ -6,11 +6,10 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const app = express();
 const routes = require('./routes');
-// origin: ['https://fearless-owl.surge.sh/'],
 
 const corsOptions = {
     // origin: ['http://localhost:3000'],
-    origin: ['https://take-a-hike.surge.sh/'],
+    origin: ['https://take-a-hike.surge.sh'],
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
     optionsSuccessStatus: 200 
