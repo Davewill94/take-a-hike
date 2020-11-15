@@ -5,11 +5,9 @@ const User = require('../models').user;
 const Review = require('../models').review;
 
 const GetTrails = (req, res) => {
-    // console.log(req)
     Trail.findAll()
     .then(trail => {
         res.status(200).send(trail)
-        // res.send(trail);
     })
     .catch((err) => {
         res.send(err)
