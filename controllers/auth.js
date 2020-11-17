@@ -80,17 +80,17 @@ const login =(req, res) => {
                 }
                 else 
                 {
-                  res.status(400).send('Error: Incorrect Username or Password'); 
+                  res.status(400).send({message:'Error: Incorrect Username or Password'}); 
                 }
             })
         }
         else 
         {
-            res.status(400).send('Error: Incorrect Username or Password'); 
+            res.status(400).send({message:'Error: Incorrect Username or Password'}); 
         }
     })
     .catch(err => {
-        res.status(500).send(`ERROR: ${err}`);
+        res.status(500).send({message: 'Error: Incorrect Username or Password'});
     })
 }
 
